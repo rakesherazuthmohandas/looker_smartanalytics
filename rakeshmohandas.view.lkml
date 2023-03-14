@@ -10,17 +10,17 @@ view: rakeshmohandas {
   }
 
   dimension: address {
-    primary_key: yes
+    primary_key: no
     sql: ${TABLE}.address ;;
   }
 
   dimension: city {
-    primary_key: yes
+    primary_key: no
     sql: ${TABLE}.city ;;
   }
 
   dimension: country {
-    primary_key: yes
+    primary_key: no
     sql: ${TABLE}.country ;;
   }
 

@@ -26,3 +26,4 @@ persist_with: customerdata_default_datagroup
 # Each joined view also needs to define a primary key.
 explore: rakeshmohandas {}
 explore: customerdata {}
+explore: ganapathy {}

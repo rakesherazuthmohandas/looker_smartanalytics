@@ -41,7 +41,9 @@ explore: campaign {
 }
 
 explore: transaction {
-
+  always_filter: {
+    filters: [transaction.product_line: "IT"]
+  }
 }
 
 

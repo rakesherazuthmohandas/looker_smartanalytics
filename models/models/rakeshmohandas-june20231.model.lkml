@@ -26,6 +26,7 @@ persist_with: rakeshmohandas-june20231_default_datagroup
 # Each joined view also needs to define a primary key.
 
 explore: campaign {
+
   join: transaction {
     type: left_outer
     relationship: one_to_many
@@ -39,7 +40,9 @@ explore: campaign {
 
 }
 
-explore: transaction {}
+explore: transaction {
+
+}
 
 
 explore: customer_data {}

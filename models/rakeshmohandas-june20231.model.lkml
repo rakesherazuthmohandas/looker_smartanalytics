@@ -31,7 +31,11 @@ explore: campaign {
     relationship: one_to_many
     sql_on: ${campaign.samsung_smart_club}=${transaction.samsung_smart_club} ;;
   }
-
+  join: customer_data {
+    type: left_outer
+    relationship: one_to_one
+    sql_on: ${campaign.samsung_smart_club}=${customer_data.samsung_smart_club} ;;
+  }
 
 }
 

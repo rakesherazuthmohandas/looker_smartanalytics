@@ -25,7 +25,16 @@ persist_with: rakeshmohandas-june20231_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
-explore: campaign {}
+explore: campaign {
+  join: transaction {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${campaign.samsung_smart_club}=${transaction.samsung_smart_club} ;;
+  }
+
+
+
+}
 
 explore: transaction {}
 

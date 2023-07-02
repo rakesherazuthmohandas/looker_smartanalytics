@@ -3,10 +3,16 @@ view: dialogflowparsed_data {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
   sql_table_name: `maverick_dialogflow.dialogflowparsed_data` ;;
+  drill_fields: [request_id]
 
-  # No primary key is defined for this view. In order to join this view in an Explore,
-  # define primary_key: yes on a dimension that has no repeated values.
+  # This primary key is the unique key for this table in the underlying database.
+  # You need to define a primary key in a view in order to join to other views.
 
+  dimension: request_id {
+    primary_key: yes
+    type: string
+    sql: ${TABLE}.request_id ;;
+  }
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
     # This dimension will be called "Agent Intent Used" in Explore.
@@ -51,6 +57,11 @@ view: dialogflowparsed_data {
     sql: ${TABLE}.lang ;;
   }
 
+  dimension: magnitude_category {
+    type: string
+    sql: ${TABLE}.magnitude_category ;;
+  }
+
   dimension: magnitude_score {
     type: string
     sql: ${TABLE}.magnitude_score ;;
@@ -61,9 +72,9 @@ view: dialogflowparsed_data {
     sql: ${TABLE}.mobilenumber ;;
   }
 
-  dimension: request_id {
+  dimension: sentiment_category {
     type: string
-    sql: ${TABLE}.request_id ;;
+    sql: ${TABLE}.sentiment_category ;;
   }
 
   dimension: sentiment_score {
@@ -101,5 +112,6 @@ view: dialogflowparsed_data {
   }
   measure: count {
     type: count
+    drill_fields: [request_id]
   }
 }
